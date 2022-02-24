@@ -1,9 +1,9 @@
-SHELL = "/bin/bash"
+SHELL := /usr/bin/zsh
 
 export PATH := $(PWD)/pact/bin:$(PATH)
 export PATH
-export PROVIDER_NAME = GoUserService
-export CONSUMER_NAME = GoAdminService
+export PROVIDER_NAME = GoUserService2022
+export CONSUMER_NAME = GoAdminService2022
 export PACT_DIR = $(PWD)/pacts
 export LOG_DIR = $(PWD)/log
 export PACT_BROKER_USERNAME = dXfltyFMgNOFZAxr8io9wJ37iUpY42M

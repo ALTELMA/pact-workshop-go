@@ -27,7 +27,7 @@ func TestPactProvider(t *testing.T) {
 		Tags:               []string{"master"},
 		FailIfNoPactsFound: false,
 		// Use this if you want to test without the Pact Broker
-		// PactURLs:                   []string{filepath.FromSlash(fmt.Sprintf("%s/goadminservice-gouserservice.json", os.Getenv("PACT_DIR")))},
+		// PactURLs:                   []string{filepath.FromSlash(fmt.Sprintf("%s/goadminservice2022-gouserservice2022.json", os.Getenv("PACT_DIR")))},
 		BrokerURL:                  fmt.Sprintf("%s://%s", os.Getenv("PACT_BROKER_PROTO"), os.Getenv("PACT_BROKER_URL")),
 		BrokerUsername:             os.Getenv("PACT_BROKER_USERNAME"),
 		BrokerPassword:             os.Getenv("PACT_BROKER_PASSWORD"),
@@ -118,7 +118,7 @@ var sallyUnauthorized = &repository.UserRepository{
 // Setup the Pact client.
 func createPact() dsl.Pact {
 	return dsl.Pact{
-		Provider:                 "GoUserService",
+		Provider:                 os.Getenv("PROVIDER_NAME"),
 		LogDir:                   logDir,
 		PactDir:                  pactDir,
 		DisableToolValidityCheck: true,
